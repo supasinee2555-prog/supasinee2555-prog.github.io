@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+  <defs>
+    <clipPath id="circle">
+      <circle cx="180" cy="180" r="170" />
+    </clipPath>
+    <style>
+      .bg { fill: #2b7cd3; }
+      .photo { image-rendering:optimizeQuality; }
+      .ring { fill: none; stroke: rgba(255,255,255,0.85); stroke-width:8; }
+    </style>
+  </defs>
+  <!-- blue background circle -->
+  <rect width="100%" height="100%" fill="#2b7cd3" rx="40" ry="40" />
+  <!-- placeholder circular photo area: embedded raster image would be ideal; using the provided photo as data URI is possible but omitted to keep file small -->
+  <g transform="translate(0,0)">
+    <g clip-path="url(#circle)">
+      <!-- fallback: light radial gradient for a portrait-like background -->
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="35%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#0d47a1" stop-opacity="0.25"/>
+        </radialGradient>
+      </defs>
+      <rect x="10" y="10" width="340" height="340" fill="url(#g1)" />
+    </g>
+    <!-- white ring -->
+    <circle cx="180" cy="180" r="170" class="ring" />
+  </g>
+  <!-- small caption (hidden visually, useful alt replacement if CSS used) -->
+  <title>Supasinee Ardjai</title>
+</svg>
